@@ -8,7 +8,7 @@ print(a[2])
 print(a[3])
 
 
-a = [100, 200, 3.1, True]
+a = [100, 200, 3.1, True,"Rahul"]
 a.append(500)                                                               
 for item in a:
     print(item)
