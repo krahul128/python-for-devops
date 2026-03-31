@@ -1,22 +1,33 @@
-from urllib import response
-
 import requests
 
 API_KEY = "DAZR72VR6C6AVTHW"
 
 API_URL = "https://www.alphavantage.co/"
 
-symbol = "IBM"
+#symbol = "IBM"
 
-def get_stock_market_data():
+def get_stock_market_data(symbol,is_time_series):
+
+      
 
     query = f"query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={API_KEY}"
 
-    print(API_URL+query)
+    #print(API_URL+query)
 
     response = requests.get(url=API_URL+query)
+    for item,value in response.json().items():
+        if is_time_series == "yes":
+    
+          print(item,value)
 
-    print(response.json())
 
-   
-get_stock_market_data()
+        else :
+           if  item == "Meta Data":
+                  print(item,value)      
+        
+symbol = input("Enter the stock symbol: ")
+is_time_series = input("Do you want to see the time series data? (yes/no): ")
+
+            
+get_stock_market_data(symbol,is_time_series)
+ 
