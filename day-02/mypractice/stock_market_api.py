@@ -25,7 +25,7 @@ def get_stock_market_data(symbol,is_time_series):
            if  item == "Meta Data":
                   print(item,value)      
         
-symbol = input("Enter the stock symbol: ")
+symbol = input("Enter the stock symbol(IBM,GOGL,AMZN): ")
 is_time_series = input("Do you want to see the time series data? (yes/no): ")
 
             
