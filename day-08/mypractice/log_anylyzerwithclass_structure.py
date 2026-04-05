@@ -5,7 +5,7 @@ class LogAnalyzer:
     
     def __init__(self, filename):
         self.filename = filename
-        self.project_dir = os.path.dirname(os.path.abspath(__file__))  # ✅ project folder
+        self.project_dir = os.path.dirname(os.path.abspath(__file__))  #  project folder
         self.filepath = os.path.join(self.project_dir, filename)
         self.lines = []
         self.counts = {}
@@ -17,7 +17,7 @@ class LogAnalyzer:
             print(f"Successfully read: {self.filepath}")
         except FileNotFoundError:
             print(f"Error: '{self.filename}' not found in project folder ({self.project_dir})")
-            print(f"Available files: {os.listdir(self.project_dir)}")  # ✅ shows what files exist
+            print(f"Available files: {os.listdir(self.project_dir)}")  #  shows what files exist
             self.lines = []
 
     def analyze(self):
@@ -46,7 +46,7 @@ class LogAnalyzer:
             return
         
         output_filename = self.filename.replace('.log', '_counts.json')
-        output_path = os.path.join(self.project_dir, output_filename)  # ✅ saves in project folder
+        output_path = os.path.join(self.project_dir, output_filename)  #  saves in project folder
         
         with open(output_path, 'w') as json_file:
             json.dump(self.counts, json_file, indent=4)
@@ -58,7 +58,7 @@ class LogAnalyzer:
         self.save_to_json()
 
 
-# ✅ Take user input
+#  Take user input
 if __name__ == "__main__":
     filename = input("Enter the log filename (e.g. app.log): ")
     analyzer = LogAnalyzer(filename)
