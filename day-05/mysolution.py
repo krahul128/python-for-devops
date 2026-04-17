@@ -3,7 +3,7 @@ import json
 
 class LogAnalyzer:
     
-    # 2. The Setup Function
+    
     def __init__(self, log_path, output_path):
        
         self.log_path = log_path
@@ -27,7 +27,7 @@ class LogAnalyzer:
         
         print(self.counts)
 
-    # 5. Action 3: Saving
+    
     def save_to_file(self):
        
         with open(self.output_path, "w") as file:
