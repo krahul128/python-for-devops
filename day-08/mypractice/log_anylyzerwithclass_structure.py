@@ -13,7 +13,7 @@ class LogAnalyzer:
     def read_logs(self):
         try:
             with open(self.filepath, 'r') as file:
-                self.lines = file.readlines()
+                self.lines = file.readlines()git st
             print(f"Successfully read: {self.filepath}")
         except FileNotFoundError:
             print(f"Error: '{self.filename}' not found in project folder ({self.project_dir})")
